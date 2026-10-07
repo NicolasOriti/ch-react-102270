@@ -1,0 +1,24 @@
+.navbar {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1rem 0.6rem;
+}
+
+.navbar-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-categories a {
+  font-size: 0.9rem;
+  color: var(--color-text-soft);
+  text-decoration: none;
+}
+
+.navbar-categories a:hover {
+  color: var(--color-text);
+}
