@@ -1,0 +1,138 @@
+JSX
+
+Caracteristicas: 
+Si deseo devolver mas de un elemento jsx debo hacerlo mediante el uso
+de un DIV o bien un Fragment <> </>
+
+Para dar clases a los elementos usamos className en vez de class
+
+<div className="container">
+
+Para dar estilos en linea lo hacemos con la palabra reservada style
+
+<h1 style={{ color: "yellow", backgroundColor: "green" }}>
+
+Para interpolar codigo de JS en el JSX usamos {}
+
+Esto lo hacemos para interpolar variables, para bloques de tipo for, o if
+Para hacer map
+
+PROPS:
+
+Las props son propiedades que me permiten customizar el componente
+de tal manera que el comportamiento del mismo lo podamos manejar a 
+partir de las props que enviemos
+
+   <Header
+        title="Soy otro titulo"
+        subtitle="yo tambien soy una prop llamada subtitle"
+    />
+
+Tipos de datos que podemos pasar por props:
+
+string
+numbers
+arrays
+functions
+objects
+booleans
+
+Cuando se traten de strings podemos hacerlo as:
+
+<Componente miPropString="Lorem Ipsum..." />
+
+<Componente otroValorNoString={boolean} />
+
+import React from "react";
+// Components
+import Header from "./Components/Header";
+
+const name = "Aldana";
+const age = 34;
+const city = "Bariloche";
+
+const App = () => {
+  return (
+    <div className="container">
+      <Header title="Clase 02 - 102270" subtitle="JSX, Componentes y Estados" />
+      <Header
+        title="Soy otro titulo"
+        subtitle="yo tambien soy una prop llamada subtitle"
+      />
+      <Header title={name} subtitle={98} />
+      <Header />
+      <Header title="X" subtitle="Y" />
+      <h3 style={{ color: "yellow", backgroundColor: "red" }}>
+        JSX, Componentes y Estados
+      </h3>
+      <h4>User: {name.toUpperCase()}</h4>
+      <span>Age: {age}</span>
+      <p>
+        city: {city} - {city.length}
+      </p>
+      <span>{age + 6}</span>
+    </div>
+  );
+};
+
+export default App;
+
+STATE (ESTADO EN REACT)
+
+useState
+
+Hook? un hook es una funcion que contiene la palabra use al inicio
+y me permite agregar funcionalidad y estado a mi componente
+
+se importa el hook import { useState } from "react";
+
+y luego SIEMPRE dentro de la funcion del componente, se utiliza el hook
+
+const [estado, setEstado] = useState("Buenos Aires")
+
+const [counter, setCounter] = useState(8)
+
+Es mejor usar prevState (el enfoque de función de actualización) en lugar del valor directo del estado porque las actualizaciones de estado en React son asincrónicas y se procesan en lotes (batching).
+Si usas el código comentado (counter + 1), corres el riesgo de calcular el nuevo estado usando un valor "viejo" o desactualizado si se realizan múltiples actualizaciones juntas.
+Aquí te detallo los motivos principales de por qué el enfoque con prevState es la forma correcta:
+1. Garantiza el valor más reciente del estado
+Cuando pasas una función a setCounter, React te garantiza que el argumento (prevState) es el estado actual y real en el momento exacto en que se ejecuta la actualización, sin importar cuántas operaciones ocurran al mismo tiempo.
+Si ejecutas esto con el código comentado:
+javascript
+const handleIncrement = () => {
+  setCounter(counter + 1);
+  setCounter(counter + 1);
+  setCounter(counter + 1);
+};
+Usa el código con precaución.
+• Resultado con el código comentado: El contador solo aumentará en 1. Esto pasa porque los tres llamados leen el mismo valor de counter (por ejemplo, 0), por lo que React interpreta las tres líneas como setCounter(0 + 1).
+En cambio, si lo haces con prevState:
+javascript
+const handleIncrement = () => {
+  setCounter(prevState => prevState + 1);
+  setCounter(prevState => prevState + 1);
+  setCounter(prevState => prevState + 1);
+};
+Usa el código con precaución.
+• Resultado con prevState: El contador aumentará en 3. React pondrá en cola las funciones y pasará el resultado de la primera como el prevState de la segunda, asegurando un conteo preciso.
+2. Evita problemas con cierres (Closures) y operaciones asincrónicas
+Si necesitas actualizar el estado dentro de una operación asincrónica (como un setTimeout o una petición fetch), el valor directo de counter puede quedar "atrapado" en el momento en que se creó la función (un efecto conocido como stale closures).
+javascript
+const handleIncrementAsync = () => {
+  setTimeout(() => {
+    // Si el usuario hace clic rápido varias veces, esto romperá el conteo
+    setCounter(counter + 1); 
+    
+    // Esto siempre funcionará bien, sin importar cuándo termine el temporizador
+    // setCounter(prevState => prevState + 1); 
+  }, 1000);
+};
+Usa el código con precaución.
+Resumen de diferencias
+Característica	setCounter(counter + 1)	setCounter(prevState => prevState + 1)
+Origen del valor	Depende del valor de la variable en el render actual.	Proviene directamente del estado interno y actualizado de React.
+Múltiples llamadas consecutivas	Se sobreescriben entre sí (solo se aplica la última).	Se acumulan correctamente en cola.
+Seguro en código asincrónico	No, puede usar valores obsoletos.	Sí, siempre obtiene el valor real del momento.
+Regla general: Siempre que tu nuevo estado dependa directamente del valor del estado anterior (como sumas, restas, alternar booleanos o mutar arreglos/objetos), utiliza la sintaxis de función con prevState.
+¿Estás experimentando algún comportamiento inesperado en tu interfaz al hacer clic rápido, o te gustaría ver cómo aplicar este mismo concepto para actualizar objetos o arreglos en el estado?
+
