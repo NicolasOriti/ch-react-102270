@@ -4,6 +4,13 @@
   padding: 0 1rem;
 }
 
+.item-list-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
 .item-list-card {
   padding: 3rem 1.5rem;
   border-radius: 6px;
