@@ -1,0 +1,19 @@
+.item-list-container {
+  max-width: 75rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.item-list-card {
+  padding: 3rem 1.5rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.item-list-card h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
