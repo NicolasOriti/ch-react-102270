@@ -1,0 +1,63 @@
+CICLOS DE VIDA DE REACT
+
+Tres Fases en un componente de REACT
+
+Fase de montado --- Cuando se pinta el componente en la UI
+Fase de actualizacion --- cuando se actualiza el estado del componente
+Fase de desmontado --- Se remueve el componente de la UI
+
+useEffect usamos para emular ciclos de vida en REACT
+
+useEffect(CALLBACK(), [arrayDeDependencias])
+
+
+  useEffect(() => {
+    console.log("USEEFFCT");
+  }); // ESTE USEEFFECT SE EJECUTA EN LA FASE DE MONTADO Y DE ACTUALIZACION DEL COMPONENTE
+
+  useEffect(() => {
+    console.log("USEEFFCT");
+  }, []); // ESTE USEEFFECT SE EJECUTA EN LA FASE DE MONTADO
+
+    useEffect(() => {
+    console.log("USEEFFCT");
+  }, [counter]); // ESTE USEEFFECT SE EJECUTA EN LA FASE DE MONTADO Y DE ACTUALIZACION DEL ESTADO QUE COLOQUE EN EL ARRAY DE DEPENDENCIAS
+
+    const productos = [
+    {
+      id: 1,
+      nombre: "Auriculares Inalámbricos",
+      precio: 49.99,
+      categoria: "Electrónica",
+    },
+    {
+      id: 2,
+      nombre: "Zapatillas Deportivas",
+      precio: 75.0,
+      categoria: "Calzado",
+    },
+    {
+      id: 3,
+      nombre: "Mochila para Notebook",
+      precio: 35.5,
+      categoria: "Accesorios",
+    },
+    {
+      id: 4,
+      nombre: "Cafetera de Goteo",
+      precio: 29.99,
+      categoria: "Hogar",
+    },
+    {
+      id: 5,
+      nombre: "Reloj Inteligente",
+      precio: 120.0,
+      categoria: "Electrónica",
+    },
+  ];
+
+        {productos.map((product, indice) => (
+        <p>
+          {product.nombre} Precio: $ {product.precio} {indice}
+        </p>
+      ))}

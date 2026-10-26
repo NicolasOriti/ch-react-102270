@@ -1,0 +1,17 @@
+  Axios con Promesas
+  
+  useEffect(() => {
+   axios(
+     "https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=nmGQjNkNm9gT8k8TjH8c9bkcW7CF9cWkkjq8dJCf",
+   )
+    .then((json) => console.log(json.data))
+    .catch((error) => console.log(error))
+    .finally(() => console.log("Finally se ejecuto al final"));
+ }, []);
+
+
+VARIABLES DE ENTORNO
+
+
+
+condition ? exprIfTrue : exprIfFalse

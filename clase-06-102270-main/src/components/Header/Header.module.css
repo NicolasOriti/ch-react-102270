@@ -1,0 +1,10 @@
+.header {
+    width: 100%;
+    background-color: black;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    height: 100px;
+    justify-content: space-around;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
