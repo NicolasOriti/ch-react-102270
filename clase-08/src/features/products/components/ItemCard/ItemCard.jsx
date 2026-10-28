@@ -3,7 +3,6 @@ import ItemCount from '../ItemCount/ItemCount';
 import './ItemCard.css';
 
 const ItemCard = ({ item }) => {
-  console.log('Rendering item: ', item);
   return (
     <Card className='item'>
       <div className='item-image'>

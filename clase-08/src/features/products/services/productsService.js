@@ -14,3 +14,14 @@ export const getProducts = async () => {
 
   return await response.json();
 };
+
+export const getProductById = async (id) => {
+  const products = await getProducts();
+  const product = products.find((p) => p.id === id);
+
+  if (!product) {
+    throw new Error('Producto no encontrado');
+  }
+
+  return product;
+};

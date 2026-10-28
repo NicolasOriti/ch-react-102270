@@ -1,5 +1,8 @@
 import Header from './layout/Header/Header';
-import ItemListContainer from './features/products/components/ItemListContainer/ItemListContainer';
+
+import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/LoginPage/LoginPage';
+import ProductDetailPage from './pages/ProductDetailPage/ProductDetailPage';
 
 import './App.css';
 
@@ -7,7 +10,11 @@ function App() {
   return (
     <>
       <Header />
-      <ItemListContainer greeting='Hola Empanaderos' />
+
+      <LoginPage />
+
+      {/* <HomePage /> */}
+      {/* <ProductDetailPage productId={1}/> */}
     </>
   );
 }
