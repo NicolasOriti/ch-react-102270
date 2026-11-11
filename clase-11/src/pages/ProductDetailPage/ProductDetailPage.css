@@ -1,0 +1,18 @@
+.product-detail-page-actions {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 1rem 1rem 0;
+}
+
+.product-detail-page-back {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-blue);
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.product-detail-page-back:hover {
+  text-decoration: underline;
+}

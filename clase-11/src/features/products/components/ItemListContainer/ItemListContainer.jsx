@@ -6,8 +6,8 @@ import ItemList from '../ItemList/ItemList';
 
 import './ItemListContainer.css';
 
-const ItemListContainer = ({ greeting }) => {
-  const { data: products, loading, error } = useProducts();
+const ItemListContainer = ({ greeting, categoryId }) => {
+  const { data: products, loading, error } = useProducts(categoryId);
 
   return (
     <Section title={greeting}>

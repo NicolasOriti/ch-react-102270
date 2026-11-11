@@ -5,6 +5,7 @@
     "price": 2000,
     "description": "Deliciosa empanada de jamón y queso, perfecta para cualquier ocasión.",
     "category": "Empanadas clasicas",
+    "categoryId": "clasicas",
     "image": "https://resizer.glanacion.com/resizer/v2/-VTRMIWQDRFAVPKCEUV6RGFI7IU.jpg?auth=8740f1510c1da057ccfdef522340469348389532f238823f107f349895146231&width=880&height=586&quality=70&smart=true",
     "rating": {
       "rate": 4.9,
@@ -18,6 +19,7 @@
     "price": 2000,
     "description": "Deliciosa empanada de carne salada, perfecta para cualquier ocasión.",
     "category": "Empanadas clasicas",
+    "categoryId": "clasicas",
     "image": "https://comidasparaguayas.com/assets/images/empanada-de-carne_800x534.webp",
     "rating": {
       "rate": 4.1,
@@ -31,6 +33,7 @@
     "price": 2000,
     "description": "Deliciosa empanada de pollo, perfecta para cualquier ocasión.",
     "category": "Empanadas clasicas",
+    "categoryId": "clasicas",
     "image": "https://www.recetasnatura.com.ar/sites/recetasnatura/files/empanadas_de_pollo.jpg",
     "rating": {
       "rate": 4.7,
@@ -44,6 +47,7 @@
     "price": 2000,
     "description": "Deliciosa empanada de humita, perfecta para cualquier ocasión.",
     "category": "Empanadas clasicas",
+    "categoryId": "clasicas",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Empanadas_de_carne%2C_humita_y_jamon_y_queso_fritas.jpg/960px-Empanadas_de_carne%2C_humita_y_jamon_y_queso_fritas.jpg",
     "rating": {
       "rate": 2.1,
@@ -57,6 +61,7 @@
     "price": 2300,
     "description": "Empanada tucumana de carne cortada a cuchillo, con huevo, cebolla de verdeo y comino. Cocinada al horno de barro.",
     "category": "Empanadas especiales",
+    "categoryId": "especiales",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Empanadas_de_Taf%C3%AD_del_Valle_%28Tucum%C3%A1n%2C_Argentina%29.jpg/960px-Empanadas_de_Taf%C3%AD_del_Valle_%28Tucum%C3%A1n%2C_Argentina%29.jpg",
     "rating": {
       "rate": 4.8,
@@ -70,6 +75,7 @@
     "price": 2400,
     "description": "Carne vacuna cortada a cuchillo, cebolla, morrón y especias. Repulgue tradicional y cocción al horno.",
     "category": "Empanadas especiales",
+    "categoryId": "especiales",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Empanadas_argentinas_de_carne_cortadas_a_cuchillo_y_al_horno.jpg/960px-Empanadas_argentinas_de_carne_cortadas_a_cuchillo_y_al_horno.jpg",
     "rating": {
       "rate": 4.6,
@@ -83,6 +89,7 @@
     "price": 2300,
     "description": "Receta cuyana con carne, mucha cebolla, aceitunas verdes y huevo duro. Masa dorada al horno.",
     "category": "Empanadas especiales",
+    "categoryId": "especiales",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Empanada_mendocina_de_carne.jpg/960px-Empanada_mendocina_de_carne.jpg",
     "rating": {
       "rate": 4.4,
@@ -96,6 +103,7 @@
     "price": 2500,
     "description": "Empanada de carne frita en grasa, crocante por fuera y jugosa por dentro. La favorita de la casa.",
     "category": "Empanadas especiales",
+    "categoryId": "especiales",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Empanadas_argentinas_de_carne_%28fritas%29.jpg/960px-Empanadas_argentinas_de_carne_%28fritas%29.jpg",
     "rating": {
       "rate": 4.9,

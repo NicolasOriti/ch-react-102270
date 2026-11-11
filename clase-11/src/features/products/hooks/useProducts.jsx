@@ -1,4 +1,4 @@
 import { useAsync } from '../../../shared/hooks/useAsync';
 import { getProducts } from '../services/productsService';
 
-export const useProducts = () => useAsync(getProducts);
+export const useProducts = (categoryId) => useAsync(getProducts, categoryId);

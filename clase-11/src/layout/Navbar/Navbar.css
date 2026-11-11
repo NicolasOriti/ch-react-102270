@@ -22,3 +22,15 @@
 .navbar-categories a:hover {
   color: var(--color-text);
 }
+
+/* NavLink agrega la clase "active" cuando su "to" coincide con la URL */
+.navbar-categories a.active {
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.navbar-category-admin {
+  margin-left: auto;
+}

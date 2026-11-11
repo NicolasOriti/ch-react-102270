@@ -1,32 +1,25 @@
+import { NavLink } from 'react-router';
+
+import { CATEGORIES } from '../../features/products/constants/categories';
 import './Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className='navbar'>
       <ul className='navbar-categories'>
-        <li className='navbar-category'>
-          <a href='#'>Empanadas Clasicas</a>
+        <li>
+          <NavLink to='/' end>
+            Todos
+          </NavLink>
         </li>
-        <li className='navbar-category'>
-          <a href='#'>Empanadas Especiales</a>
-        </li>
-        <li className='navbar-category'>
-          <a href='#'>Postres</a>
-        </li>
-        <li className='navbar-category'>
-          <a href='#'>Bebidas</a>
-        </li>
+        {CATEGORIES.map((category) => (
+          <li key={category.id} className='navbar-category'>
+            <NavLink to={`/category/${category.id}`}>{category.displayName}</NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
 };
 
 export default Navbar;
-
-// function Navbar() {
-//   return (
-//     <nav>
-//       Navbar
-//     </nav>
-//   );
-// }

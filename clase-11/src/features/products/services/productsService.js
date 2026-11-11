@@ -3,7 +3,7 @@ const SIMULATED_DELAY_MS = 2000;
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export const getProducts = async () => {
+export const getProducts = async (categoryId) => {
   await delay(SIMULATED_DELAY_MS);
 
   const response = await fetch(PRODUCTS_URL);
@@ -12,7 +12,11 @@ export const getProducts = async () => {
     throw new Error(`No pudimos cargar los productos (HTTP: ${response.status})`);
   }
 
-  return await response.json();
+  const products = await response.json();
+
+  if (!categoryId) return products;
+
+  return products.filter((product) => product.categoryId === categoryId);
 };
 
 export const getProductById = async (id) => {

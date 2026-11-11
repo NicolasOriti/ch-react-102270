@@ -74,3 +74,11 @@
 .item-info {
   margin-top: auto;
 }
+
+.item-link {
+  text-decoration: none;
+}
+/* 
+.item-link:hover {
+  background-color: var(--color-blue-dark);
+} */
