@@ -1,0 +1,16 @@
+.section {
+  max-width: 75rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  margin: 0 0 1.5rem;
+  padding: 1.5rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: var(--shadow-soft);
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+}

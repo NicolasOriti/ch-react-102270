@@ -1,0 +1,15 @@
+.status {
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-text-soft);
+}
+
+.status-error {
+  border-radius: 6px;
+  background-color: #fff1f1;
+  color: #b42318;
+}
+
+.status-error p {
+  margin: 0 0 1rem;
+}
