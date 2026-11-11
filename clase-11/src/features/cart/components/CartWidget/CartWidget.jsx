@@ -1,15 +1,18 @@
+import { useCartContext } from '../../context/CartContext';
+import { Link } from 'react-router';
+
 import './CartWidget.css';
 
 const CartWidget = () => {
-  const itemCount = 3;
+  const { totalItems } = useCartContext();
 
   return (
-    <button className='cart-widget' aria-label={`Carrito con ${itemCount} productos`}>
+    <Link to='/cart' className='cart-widget' aria-label={`Carrito con ${totalItems} productos`}>
       <span className='cart-icon' aria-hidden='true'>
         🛒
       </span>
-      <span className='cart-badge'>{itemCount}</span>
-    </button>
+      <span className='cart-badge'>{totalItems}</span>
+    </Link>
   );
 };
 

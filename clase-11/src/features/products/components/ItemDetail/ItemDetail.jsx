@@ -2,8 +2,15 @@ import Card from '../../../../shared/components/Card/Card';
 import ItemCount from '../ItemCount/ItemCount';
 
 import './ItemDetail.css';
+import { useCartContext } from '../../../cart/context/CartContext';
 
 const ItemDetail = ({ item }) => {
+  const { addItem } = useCartContext();
+
+  const handleAdd = (quantity) => {
+    addItem(item, quantity);
+  };
+
   return (
     <Card className='item-detail'>
       <div className='item-detail-image'>
@@ -19,7 +26,8 @@ const ItemDetail = ({ item }) => {
         <p className='item-detail-price'>{item.price}</p>
         <p className='item-detail-description'>{item.description}</p>
         <p className='item-detail-stock'>Stock: {item.stock}</p>
-        <ItemCount stock={item.stock} />
+
+        <ItemCount stock={item.stock} onAdd={handleAdd} />
       </div>
     </Card>
   );

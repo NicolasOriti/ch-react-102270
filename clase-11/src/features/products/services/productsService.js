@@ -21,7 +21,9 @@ export const getProducts = async (categoryId) => {
 
 export const getProductById = async (id) => {
   const products = await getProducts();
-  const product = products.find((p) => p.id === id);
+  console.log('Este es el products in service, ', products);
+
+  const product = products.find((p) => p.id == id);
 
   if (!product) {
     throw new Error('Producto no encontrado');

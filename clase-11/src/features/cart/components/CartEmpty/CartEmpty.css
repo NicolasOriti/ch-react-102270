@@ -1,0 +1,28 @@
+.cart-empty {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.cart-empty-icon {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.cart-empty-title {
+  margin: 0.5rem 0;
+}
+
+.cart-empty-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  background-color: var(--color-blue);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cart-empty-link:hover {
+  background-color: var(--color-blue-dark);
+}

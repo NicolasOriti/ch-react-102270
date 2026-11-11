@@ -1,0 +1,21 @@
+.cart {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+  align-items: start;
+  gap: 2rem;
+}
+
+.cart-list {
+  margin: 0;
+  padding: 0 1.5rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: var(--shadow-soft);
+  list-style: none;
+}
+
+@media (max-width: 48rem) {
+  .cart {
+    grid-template-columns: 1fr;
+  }
+}

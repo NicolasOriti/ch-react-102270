@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './ItemCount.css';
 
-const ItemCount = ({ stock = 10 }) => {
-  const [count, setCount] = useState(1);
+const ItemCount = ({ stock = 10, initial = 1, onAdd }) => {
+  const [count, setCount] = useState(initial);
 
   const decrement = () => {
     setCount((prevCount) => prevCount - 1, 1);
@@ -13,7 +13,9 @@ const ItemCount = ({ stock = 10 }) => {
   };
 
   const addToCart = () => {
-    console.log(`Agregado al carrito: ${count}`);
+    console.log('Agregando...');
+    onAdd(count);
+    setCount(initial);
   };
 
   return (
